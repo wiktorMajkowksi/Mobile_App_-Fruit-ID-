@@ -38,11 +38,42 @@ public class loginFragment extends Fragment implements View.OnClickListener{
             }
         });
     }
+    public void delete()
+    {
+        delete = getActivity().findViewById(R.id.et_email);
+        helper = new myDbAdapter(getContext());
+        Button delete_button = getActivity().findViewById(R.id.btn_delete);
+        delete_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String uname = delete.getText().toString();
+
+                if(uname.isEmpty())
+                {
+                    Message.message(getActivity(),"Enter Data");
+                }
+                else{
+                    int a= helper.delete(uname);
+                    if(a<=0)
+                    {
+                        Message.message(getActivity(),"Unsuccessful");
+                        delete.setText("");
+                    }
+                    else
+                    {
+                        Message.message(getContext(), "DELETED");
+                        delete.setText("");
+                    }
+                }
+            }
+        });
+    }
 
 
     @Override
     public void onClick(View view) {
         viewData();
+        delete();
     }
 }
 
