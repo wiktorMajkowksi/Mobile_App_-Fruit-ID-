@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 
 public class myDbAdapter {
     myDbHelper myhelper;
@@ -42,6 +44,20 @@ public class myDbAdapter {
         return buffer.toString();
     }
 
+    public ArrayList getAuth(){
+        SQLiteDatabase db = myhelper.getWritableDatabase();
+        String[] columns = {myDbHelper.UID, myDbHelper.EMAIL, myDbHelper.MyPASSWORD};
+        Cursor cursor =db.query(myDbHelper.TABLE_NAME,columns,null,null,null,null,null);
+        ArrayList buffer= new ArrayList();
+        while (cursor.moveToNext())
+        {
+            String name =cursor.getString(cursor.getColumnIndex(myDbHelper.EMAIL));
+            String password =cursor.getString(cursor.getColumnIndex(myDbHelper.MyPASSWORD));
+            buffer.add(name + " " + password);
+        }
+        return buffer;
+    }
+
     public  int delete(String uname)
     {
         SQLiteDatabase db = myhelper.getWritableDatabase();
@@ -51,15 +67,6 @@ public class myDbAdapter {
         return  count;
     }
 
-    public int updateName(String oldName , String newName)
-    {
-        SQLiteDatabase db = myhelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(myDbHelper.NAME,newName);
-        String[] whereArgs= {oldName};
-        int count =db.update(myDbHelper.TABLE_NAME,contentValues, myDbHelper.NAME+" = ?",whereArgs );
-        return count;
-    }
 
     static class myDbHelper extends SQLiteOpenHelper
     {
