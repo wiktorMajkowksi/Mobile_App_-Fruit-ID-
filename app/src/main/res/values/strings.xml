@@ -4,4 +4,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_maps">Maps</string>
     <string name="maps">Maps</string>
+    <string name="e_mail">Email</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
 </resources>
