@@ -7,4 +7,7 @@
     <string name="e_mail">Email</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
+    <string name="re_type_password">Re-enter password</string>
+    <string name="register">Register</string>
+    <string name="your_name">Your Name</string>
 </resources>

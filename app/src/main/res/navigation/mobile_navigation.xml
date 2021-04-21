@@ -22,4 +22,17 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:label="Maps"
         tools:layout="@layout/fragment_maps" />
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.navigation.loginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.example.navigation.registerFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" />
+
 </navigation>
