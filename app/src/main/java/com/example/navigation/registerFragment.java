@@ -49,9 +49,15 @@ public class registerFragment extends Fragment implements View.OnClickListener {
         String t2 = Pass.getText().toString();
         String t3 = Re_Pass.getText().toString();
         String t4 = Email.getText().toString();
+        boolean valid = isPasswordValid(t2,t3);
 
-        if(t1.isEmpty() || t2.isEmpty() || t3.isEmpty() || t4.isEmpty()){
-            Message.message(getActivity(), "Fill the form");
+        if(valid==false)
+        {
+            if(t1.isEmpty() || t2.isEmpty() || t3.isEmpty() || t4.isEmpty()){
+                Message.message(getActivity(), "Fill the form");
+            }else {
+                Message.message(getActivity(), "Passwords don't match");
+            }
         }
         else
         {
@@ -73,6 +79,13 @@ public class registerFragment extends Fragment implements View.OnClickListener {
             }
         }
     }});
+    }
+    public static boolean isPasswordValid(String pass, String re_pass){
+        if(pass.equals(re_pass) && !(pass.isEmpty()) && !(re_pass.isEmpty())){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 
