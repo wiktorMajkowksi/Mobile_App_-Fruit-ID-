@@ -93,6 +93,9 @@ public class CameraFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        /*
+            function to return the result of classification into the list view
+        */
         // if this is the result of our camera image request
         if (requestCode == CAMERA_REQEUST_CODE) {
             // getting bitmap of the image
