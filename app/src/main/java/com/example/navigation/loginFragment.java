@@ -25,56 +25,9 @@ public class loginFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View layout = inflater.inflate(R.layout.fragment_login, container, false);
-        Button button_view_data = (Button) layout.findViewById(R.id.view_data);
-        button_view_data.setOnClickListener(this);
-
-        Button delete_button = (Button) layout.findViewById(R.id.btn_delete);
-        delete_button.setOnClickListener(this);
-
         Button login_button = (Button) layout.findViewById(R.id.btn_login);
         login_button.setOnClickListener(this);
         return layout;
-    }
-    public void viewData() {
-        helper = new myDbAdapter(getContext());
-        Button button_view_data = getActivity().findViewById(R.id.view_data);
-        button_view_data.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String data = helper.getData();
-                Message.message(getContext(), data);
-            }
-        });
-    }
-    public void delete()
-    {
-        delete = getActivity().findViewById(R.id.et_email);
-        helper = new myDbAdapter(getContext());
-        Button delete_button = getActivity().findViewById(R.id.btn_delete);
-        delete_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String uname = delete.getText().toString();
-
-                if(uname.isEmpty())
-                {
-                    Message.message(getActivity(),"Enter Data");
-                }
-                else{
-                    int a= helper.delete(uname);
-                    if(a<=0)
-                    {
-                        Message.message(getActivity(),"Unsuccessful");
-                        delete.setText("");
-                    }
-                    else
-                    {
-                        Message.message(getContext(), "DELETED");
-                        delete.setText("");
-                    }
-                }
-            }
-        });
     }
     public void authenticate(){
         email = getActivity().findViewById(R.id.et_email);
@@ -96,22 +49,29 @@ public class loginFragment extends Fragment implements View.OnClickListener{
                 } else {
                     ArrayList data = helper.getAuth();
                     String data2 = String.join("\t", data);
-                    if(entry.equals(data2)){
+                    if(getAuthentication(entry,data2)){
                         Message.message(getActivity(),"Login Successful");
                     }
                     else {
                         Message.message(getActivity(),"Incorrect details entered");
+                        Message.message(getActivity(),entry);
+                        Message.message(getActivity(),data2);
                     }
                 }
             }
         });
     }
+    public static boolean getAuthentication(String a, String b){
+        if(a.equals(b) && !(a.isEmpty()) && !(b.isEmpty())){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 
     @Override
     public void onClick(View view) {
-        viewData();
-        delete();
         authenticate();
     }
 }
