@@ -19,11 +19,11 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_maps);
+        setContentView(R.layout.fragment_maps);                                                     //sets the fragment layout
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.Maps);
-        mapFragment.getMapAsync(this);
+        mapFragment.getMapAsync(this);                                           //opens Google maps
 
 
 

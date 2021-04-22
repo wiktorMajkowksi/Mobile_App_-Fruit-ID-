@@ -31,6 +31,10 @@ public class loginFragment extends Fragment implements View.OnClickListener{
 
         return layout;
     }
+    @Override
+    public void onClick(View view) {
+        authenticate();
+    }
 
     public void authenticate(){
         email = getActivity().findViewById(R.id.et_email);
@@ -61,17 +65,12 @@ public class loginFragment extends Fragment implements View.OnClickListener{
             }
         });
     }
-    public static boolean getAuthentication(String a, ArrayList b){
+    public static boolean getAuthentication(String a, ArrayList b){                                 //checks if database contains details provided and returns boolean
         if(b.contains(a)){
             return true;
         }else{
             return false;
         }
-    }
-
-    @Override
-    public void onClick(View view) {
-        authenticate();
     }
 }
 

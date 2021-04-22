@@ -80,6 +80,7 @@ public class registerFragment extends Fragment implements View.OnClickListener {
         }
     }});
     }
+    //checks if passwords entered match
     public static boolean isPasswordValid(String pass, String re_pass){
         if(pass.equals(re_pass) && !(pass.isEmpty()) && !(re_pass.isEmpty())){
             return true;

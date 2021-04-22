@@ -56,6 +56,12 @@ public class CameraFragment extends Fragment implements View.OnClickListener {
         button.setOnClickListener(this);                                                            //sets listener for this button
         return layout;
     }
+
+    @Override
+    public void onClick(View view) {
+        initializeUIElements();
+    }
+
     /*
 
     Initialises all dynamically changing elements in the fragment
@@ -178,10 +184,5 @@ public class CameraFragment extends Fragment implements View.OnClickListener {
             return getActivity().checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
         }
         return true;
-    }
-
-    @Override
-    public void onClick(View view) {
-        initializeUIElements();
     }
 }
