@@ -23,7 +23,7 @@ public class HomeFragment extends Fragment {
         TextView textView = root.findViewById(R.id.welcome_text);
         textView.setText("Welcome to FruitID");
         ImageView imageView = root.findViewById(R.id.app_logo);
-        imageView.setImageBitmap(BitmapFactory.decodeFile("D:\\Year3\\AppDEV\\V1\\V1Complete\\app\\src\\main\\res\\mipmap-anydpi-v26"));
+        imageView.setImageBitmap(BitmapFactory.decodeFile(""));
 
         return root;
     }
