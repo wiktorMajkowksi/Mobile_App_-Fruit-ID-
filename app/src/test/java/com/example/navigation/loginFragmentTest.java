@@ -28,4 +28,20 @@ public class loginFragmentTest {
         arr.add("Login  Pass");
         assertFalse(loginFragment.getAuthentication("NOTLogin NOTPass", arr));
     }
+    @Test
+    public void isAuth_null_a() {
+        ArrayList<String> arr = new ArrayList<String>();
+        arr.add("Login");
+        arr.add("Login Pass");
+        arr.add("L p  p s");
+        arr.add("LoginPass");
+        arr.add("Login  Pass");
+        assertFalse(loginFragment.getAuthentication(null, arr));
+    }
+    @Test
+    public void isAuth_null_b() {
+        ArrayList<String> arr = new ArrayList<String>();
+        arr.add(null);
+        assertFalse(loginFragment.getAuthentication("Login Pass", arr));
+    }
 }

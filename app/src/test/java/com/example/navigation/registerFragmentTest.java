@@ -21,7 +21,11 @@ public class registerFragmentTest {
     }
     @Test
     public void isPasswordValid_minimal_difference() {
-        assertFalse(registerFragment.isPasswordValid("PASSSWORD","PASSWORD"));
+        assertFalse(registerFragment.isPasswordValid("PASSsWORD","PASSWORD"));
+    }
+    @Test
+    public void isPasswordValid_empty() {
+        assertFalse(registerFragment.isPasswordValid("",""));
     }
 
 }
