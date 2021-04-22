@@ -52,23 +52,27 @@ public class CameraFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.fragment_camera, container, false);
-
-        Button button = (Button) layout.findViewById(R.id.cameraBNT);
-        button.setOnClickListener(this);
+        Button button = (Button) layout.findViewById(R.id.cameraBNT);                               //initializes button to open camera
+        button.setOnClickListener(this);                                                            //sets listener for this button
         return layout;
     }
+    /*
+
+    Initialises all dynamically changing elements in the fragment
+
+     */
     private void initializeUIElements() {
-        imageView = getActivity().findViewById(R.id.fragment_detect);
-        listView = getActivity().findViewById(R.id.lv_probabilities);
-        Button button = getActivity().findViewById(R.id.cameraBNT);
+        imageView = getActivity().findViewById(R.id.fragment_detect);                               //sets imageView with image section found by id
+        listView = getActivity().findViewById(R.id.lv_probabilities);                               //sets listView with list part found by id
+        Button button = getActivity().findViewById(R.id.cameraBNT);                                 //finds button by id
 
         /*
          * Creating an instance of our tensor image classifier
          */
         try {
-            imageClassifier = new ImageClassifier(getActivity());
+            imageClassifier = new ImageClassifier(getActivity());                                   //makes new call to ImageClassifier class to classify image
         } catch (IOException e) {
-            Log.e("Image Classifier Error", "ERROR: " + e);
+            Log.e("Image Classifier Error", "ERROR: " + e);                               //throws error if image classifier would break down
         }
 
         // adding on click listener to button
