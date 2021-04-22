@@ -22,8 +22,6 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         TextView textView = root.findViewById(R.id.welcome_text);
         textView.setText("Welcome to FruitID");
-        ImageView imageView = root.findViewById(R.id.app_logo);
-        imageView.setImageBitmap(BitmapFactory.decodeFile(""));
 
         return root;
     }

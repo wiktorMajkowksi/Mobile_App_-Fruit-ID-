@@ -33,6 +33,7 @@ public class registerFragment extends Fragment implements View.OnClickListener {
         register();
     }
 
+    //registers the user if all conditions are met otherwise returns requirements
     public void register()
     {
         Name = (EditText) getActivity().findViewById(R.id.et_name);

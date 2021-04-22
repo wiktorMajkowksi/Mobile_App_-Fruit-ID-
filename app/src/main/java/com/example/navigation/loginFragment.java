@@ -36,6 +36,7 @@ public class loginFragment extends Fragment implements View.OnClickListener{
         authenticate();
     }
 
+    //logs user in if user with passed credentials exists in the database
     public void authenticate(){
         email = getActivity().findViewById(R.id.et_email);
         password = getActivity().findViewById(R.id.et_password);
