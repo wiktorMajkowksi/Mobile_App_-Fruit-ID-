@@ -23,11 +23,18 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/**
- * The class that performs image classification usign tensor flow model
- * <p>
- * Created by A Anand on 11-05-2020
+/* REFERENCE
+
+AUTHOR:                     A Anand
+DATE OF CODE PUBLICATION:   12/05/2020
+TITLE OF PROGRAM:           Tensor-Image_Classification_quantized_mobinet
+URL:                        https://www.youtube.com/watch?v=luewM4Wig1E
+
+I implemented code from this tutorial https://www.youtube.com/watch?v=luewM4Wig1E in order to perform
+machine learning object detection, using camera sensor, Google Teachable ML and Tensorflow.
+
  */
+
 public class ImageClassifier {
 
     /**
@@ -182,9 +189,6 @@ public class ImageClassifier {
          * A sortable score for how good the recognition is relative to others. Higher should be better.
          */
         private float confidence;
-
-        public Recognition() {
-        }
 
         public Recognition(String name, float confidence) {
             this.name = name;

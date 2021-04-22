@@ -1,12 +1,16 @@
 <resources>
     <string name="app_name">FruitID</string>
     <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
     <string name="title_maps">Maps</string>
-    <string name="maps">Maps</string>
+    <string name="title_camera">Camera</string>
+    <string name="register">Register</string>
     <string name="e_mail">Email</string>
-    <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="re_type_password">Re-enter password</string>
-    <string name="register">Register</string>
     <string name="your_name">Your Name</string>
+    <string name="login">Login</string>
+    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">TFL Detect</string>
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
 </resources>

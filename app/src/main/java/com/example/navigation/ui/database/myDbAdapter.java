@@ -43,7 +43,6 @@ public class myDbAdapter {
         }
         return buffer.toString();
     }
-
     public ArrayList getAuth(){
         SQLiteDatabase db = myhelper.getWritableDatabase();
         String[] columns = {myDbHelper.UID, myDbHelper.EMAIL, myDbHelper.MyPASSWORD};
@@ -67,6 +66,15 @@ public class myDbAdapter {
         return  count;
     }
 
+    public int updateName(String oldName , String newName)
+    {
+        SQLiteDatabase db = myhelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(myDbHelper.NAME,newName);
+        String[] whereArgs= {oldName};
+        int count =db.update(myDbHelper.TABLE_NAME,contentValues, myDbHelper.NAME+" = ?",whereArgs );
+        return count;
+    }
 
     static class myDbHelper extends SQLiteOpenHelper
     {

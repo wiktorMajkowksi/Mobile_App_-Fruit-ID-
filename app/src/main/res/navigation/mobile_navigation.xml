@@ -6,10 +6,11 @@
     app:startDestination="@+id/navigation_home">
 
     <fragment
-        android:id="@+id/navigation_camera"
-        android:name="com.example.navigation.ui.camera.CameraFragment"
-        android:label="Camera"
-        tools:layout="@layout/fragment_camera" />
+        android:id="@+id/navigation_maps"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:label="Maps"
+        tools:layout="@layout/fragment_maps" />
+
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.navigation.ui.home.HomeFragment"
@@ -17,10 +18,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_maps"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:label="Maps"
-        tools:layout="@layout/fragment_maps" />
+        android:id="@+id/navigation_camera"
+        android:name="com.example.navigation.ui.camera.CameraFragment"
+        android:label="Camera"
+        tools:layout="@layout/fragment_camera"/>
 
     <fragment
         android:id="@+id/navigation_login"
@@ -33,5 +34,6 @@
         android:name="com.example.navigation.registerFragment"
         android:label="Register"
         tools:layout="@layout/fragment_register" />
+
 
 </navigation>

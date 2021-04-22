@@ -18,17 +18,20 @@ import java.util.ArrayList;
 
 public class loginFragment extends Fragment implements View.OnClickListener{
     myDbAdapter helper;
-    EditText delete, email, password;
+    EditText  email, password;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View layout = inflater.inflate(R.layout.fragment_login, container, false);
+
         Button login_button = (Button) layout.findViewById(R.id.btn_login);
         login_button.setOnClickListener(this);
+
         return layout;
     }
+
     public void authenticate(){
         email = getActivity().findViewById(R.id.et_email);
         password = getActivity().findViewById(R.id.et_password);
@@ -65,7 +68,6 @@ public class loginFragment extends Fragment implements View.OnClickListener{
             return false;
         }
     }
-
 
     @Override
     public void onClick(View view) {
