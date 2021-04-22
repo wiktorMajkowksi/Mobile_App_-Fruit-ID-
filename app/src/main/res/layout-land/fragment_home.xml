@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="129dp"
-        android:layout_height="125dp"
-        android:background="@color/design_default_color_primary"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@mipmap/ic_launcher_foreground"
         android:contentDescription="APP LOGO"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.461"
-        tools:src="@drawable/ic_home_black_24dp"
         tools:visibility="visible" />
 
     <TextView
@@ -29,12 +28,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="196dp"
         android:text="Welcome to FruidID"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/app_logo"
-        app:layout_constraintVertical_bias="0.796" />
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
