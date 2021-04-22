@@ -13,5 +13,9 @@ public class registerFragmentTest {
     public void isPasswordValid_uppercase() {
         assertTrue(registerFragment.isPasswordValid("PASSWORD","PASSWORD"));
     }
+    @Test
+    public void isPasswordValid_password_no_match() {
+        assertFalse(registerFragment.isPasswordValid("something","PASSWORD"));
+    }
 
 }
