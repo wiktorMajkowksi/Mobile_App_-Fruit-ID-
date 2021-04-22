@@ -9,9 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 
 
-public class myDbAdapter {
+public class Database_Handler {
     myDbHelper myhelper;
-    public myDbAdapter(Context context)
+    public Database_Handler(Context context)
     {
         myhelper = new myDbHelper(context);
     }
@@ -84,18 +84,18 @@ public class myDbAdapter {
             try {
                 db.execSQL(CREATE_TABLE);
             } catch (Exception e) {
-                Message.message(context,""+e);
+                Logger.message(context,""+e);
             }
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             try {
-                Message.message(context,"OnUpgrade");
+                Logger.message(context,"OnUpgrade");
                 db.execSQL(DROP_TABLE);
                 onCreate(db);
             }catch (Exception e) {
-                Message.message(context,""+e);
+                Logger.message(context,""+e);
             }
         }
     }

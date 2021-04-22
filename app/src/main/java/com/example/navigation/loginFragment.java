@@ -11,13 +11,13 @@ import android.widget.EditText;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
-import com.example.navigation.ui.database.Message;
-import com.example.navigation.ui.database.myDbAdapter;
+import com.example.navigation.ui.database.Logger;
+import com.example.navigation.ui.database.Database_Handler;
 
 import java.util.ArrayList;
 
 public class loginFragment extends Fragment implements View.OnClickListener{
-    myDbAdapter helper;
+    Database_Handler helper;
     EditText  email, password;
 
     @Override
@@ -35,7 +35,7 @@ public class loginFragment extends Fragment implements View.OnClickListener{
     public void authenticate(){
         email = getActivity().findViewById(R.id.et_email);
         password = getActivity().findViewById(R.id.et_password);
-        helper = new myDbAdapter(getContext());
+        helper = new Database_Handler(getContext());
         Button login_button = getActivity().findViewById(R.id.btn_login);
         login_button.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -46,16 +46,16 @@ public class loginFragment extends Fragment implements View.OnClickListener{
                 String entry = a+" "+b;
 
                 if(a.isEmpty()){
-                    Message.message(getActivity(),"Enter Email");
+                    Logger.message(getActivity(),"Enter Email");
                 } if(b.isEmpty()){
-                    Message.message(getActivity(),"Enter Password");
+                    Logger.message(getActivity(),"Enter Password");
                 } else {
                     ArrayList data = helper.getAuth();
                     if(getAuthentication(entry,data)){
-                        Message.message(getActivity(),"Login Successful");
+                        Logger.message(getActivity(),"Login Successful");
                     }
                     else {
-                        Message.message(getActivity(),"Incorrect details entered");
+                        Logger.message(getActivity(),"Incorrect details entered");
                     }
                 }
             }

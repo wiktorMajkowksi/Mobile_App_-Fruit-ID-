@@ -8,7 +8,7 @@ import androidx.annotation.RequiresApi;
 
 import java.util.ArrayList;
 
-public class Message {
+public class Logger {
     /*
         displays message at the bottom section of scree (For String input)
     */

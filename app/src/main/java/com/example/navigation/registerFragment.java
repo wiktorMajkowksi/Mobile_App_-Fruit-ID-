@@ -9,13 +9,13 @@ import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.navigation.ui.database.Message;
-import com.example.navigation.ui.database.myDbAdapter;
+import com.example.navigation.ui.database.Logger;
+import com.example.navigation.ui.database.Database_Handler;
 
 public class registerFragment extends Fragment implements View.OnClickListener {
 
     EditText Name, Pass , Email, Re_Pass;
-    myDbAdapter helper;
+    Database_Handler helper;
 
 
     @Override
@@ -40,7 +40,7 @@ public class registerFragment extends Fragment implements View.OnClickListener {
         Re_Pass = (EditText) getActivity().findViewById(R.id.et_repassword);
         Email = (EditText) getActivity().findViewById(R.id.et_email);
 
-        helper = new myDbAdapter(getContext());
+        helper = new Database_Handler(getContext());
         Button button = getActivity().findViewById(R.id.btn_register);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -54,9 +54,9 @@ public class registerFragment extends Fragment implements View.OnClickListener {
         if(valid==false)
         {
             if(t1.isEmpty() || t2.isEmpty() || t3.isEmpty() || t4.isEmpty()){
-                Message.message(getActivity(), "Fill the form");
+                Logger.message(getActivity(), "Fill the form");
             }else {
-                Message.message(getActivity(), "Passwords don't match");
+                Logger.message(getActivity(), "Passwords don't match");
             }
         }
         else
@@ -64,14 +64,14 @@ public class registerFragment extends Fragment implements View.OnClickListener {
             long id = helper.insertData(t1,t2,t3,t4);
             if(id<=0)
             {
-                Message.message(getActivity(),"Insertion Unsuccessful");
+                Logger.message(getActivity(),"Insertion Unsuccessful");
                 Name.setText("");
                 Pass.setText("");
                 Re_Pass.setText("");
                 Email.setText("");
             } else
             {
-                Message.message(getActivity(),"Insertion Successful");
+                Logger.message(getActivity(),"Insertion Successful");
                 Name.setText("");
                 Pass.setText("");
                 Re_Pass.setText("");
