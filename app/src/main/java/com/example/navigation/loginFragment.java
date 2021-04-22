@@ -48,21 +48,19 @@ public class loginFragment extends Fragment implements View.OnClickListener{
                     Message.message(getActivity(),"Enter Password");
                 } else {
                     ArrayList data = helper.getAuth();
-                    String data2 = String.join("\t", data);
-                    if(getAuthentication(entry,data2)){
+                    //String data2 = String.join("\t", data);
+                    if(getAuthentication(entry,data)){
                         Message.message(getActivity(),"Login Successful");
                     }
                     else {
                         Message.message(getActivity(),"Incorrect details entered");
-                        Message.message(getActivity(),entry);
-                        Message.message(getActivity(),data2);
                     }
                 }
             }
         });
     }
-    public static boolean getAuthentication(String a, String b){
-        if(a.equals(b) && !(a.isEmpty()) && !(b.isEmpty())){
+    public static boolean getAuthentication(String a, ArrayList b){
+        if(b.contains(a)){
             return true;
         }else{
             return false;
