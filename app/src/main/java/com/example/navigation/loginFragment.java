@@ -48,7 +48,6 @@ public class loginFragment extends Fragment implements View.OnClickListener{
                     Message.message(getActivity(),"Enter Password");
                 } else {
                     ArrayList data = helper.getAuth();
-                    //String data2 = String.join("\t", data);
                     if(getAuthentication(entry,data)){
                         Message.message(getActivity(),"Login Successful");
                     }
