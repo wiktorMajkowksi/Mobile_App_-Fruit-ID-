@@ -8,6 +8,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 
+/*  REFERENCE
+AUTHOR:                     Dr. Xin
+DATE OF CODE PUBLICATION:   04/02/2021
+TITLE OF PROGRAM:           6.3 Android SQLite Database
+URL:                        https://github.coventry.ac.uk/6002CEM-2021JANMAY/Teaching-projects/tree/master/Week%206%20Data%20Persistence/Mydatabase
+
+This code was written and adapted to fit purpose of this application
+with of guidance from the lab exercises provided
+*/
 
 public class Database_Handler {
     myDbHelper myhelper;
